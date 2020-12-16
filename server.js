@@ -20,18 +20,16 @@ client.on('ready',() => {
 
 
 
-client.on("guildMemberAdd", member => {
-  const channel = member.guild.channels.cache.find(
-    ch => ch.id === "788543692411109416"
-  );
+client.on('guildMemberAdd', member => {
+    const exampleEmbed = new Discord.RichEmbed()
+        .setColor('#0099ff')
+        .setTitle('Welcome')
+        .addField('', member.nickname)
+        .setImage(member.user.avatarURL)
 
-    const embed = new MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle('New Member')
-        .setDescription(`**${member.displayName}** welcome to ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
-    
-    channel.send(Embed);
-});
+    member.guild.channels.get('788543692411109416').send(exampleEmbed);
+})
+
 
 
 
