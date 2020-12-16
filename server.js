@@ -19,18 +19,19 @@ client.on('ready',() => {
 })
 
 
-client.on('guildMemberAdd', member => {
-  let bicon = member.user.displayAvatarURL;
-  let myGuild = client.guilds.get('689139264960856101')
-  let membercount = myGuild.memberCount;
-  const channel = member.guild.channels.find(ch => ch.id === '788543692411109416');
-    const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setThumbnail(bicon)
-      .setDescription(`ברוכים הבאים לשרת ${member}, אתה משתמש מספר, ${membercount} `);
-    channel.send(embed);
-  }
-)
+client.on("guildMemberAdd",member => {
+if(member.guild.id === "748088208427974676"){
+const welcomeembed = new MessageEmbed()
+.setAuthor("Welcome!", "https://cdn.discordapp.com/avatars/442355791412854784/60e79e40fd23a0deeb22d56e1fa8d8f0.webp?size=512")
+.setThumbnail(member.guild.iconURL({dynamic: true, size: 512}))
+.setTitle(`Welcome **${member.user.username}** to **${member.guild.name}**`)
+.setDescription("join us chatting in <#748095614017077318>!")
+.setImage(member.user.displayAvatarURL({dynamic: true, size: 512}))
+.setFooter(member.guild.name, member.guild.iconURL({dynamic: true, size: 512}))
+.setColor("#0000ff")
+.setTimestamp();
+    bot.guilds.cache.get("748088208427974676").channels.cache.get("748633941912584333").send(welcomeembed);
+}
 
 
 client.on('message', message => {
@@ -48,16 +49,5 @@ message.delete()
 );
  
 
-client.on('guildMemberAdd', member => {
-        let bicon = member.user.displayAvatarURL;
-        const channel = member.guild.channels.find(ch => ch.id === '689139264960856101');
-          const embed = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setThumbnail(bicon)
-            .setDescription(`**Welcome to GOV-RP | Auditions**`);
-          member.send(embed);
-        }
-      )
-
-
-client.login('Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.Xt5qGOSBiCb2iVGD00aBehSp-K4');//token
+  
+client.login(process.env.TOKEN);
