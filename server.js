@@ -19,19 +19,18 @@ client.on('ready',() => {
 })
 
 
-client.on("guildMemberAdd",member => {
-if(member.guild.id === "748088208427974676"){
-const welcomeembed = new MessageEmbed()
-.setAuthor("Welcome!", "https://cdn.discordapp.com/avatars/442355791412854784/60e79e40fd23a0deeb22d56e1fa8d8f0.webp?size=512")
-.setThumbnail(member.guild.iconURL({dynamic: true, size: 512}))
-.setTitle(`Welcome **${member.user.username}** to **${member.guild.name}**`)
-.setDescription("join us chatting in <#748095614017077318>!")
-.setImage(member.user.displayAvatarURL({dynamic: true, size: 512}))
-.setFooter(member.guild.name, member.guild.iconURL({dynamic: true, size: 512}))
-.setColor("#0000ff")
-.setTimestamp();
-    bot.guilds.cache.get("748088208427974676").channels.cache.get("748633941912584333").send(welcomeembed);
-}
+client.on('guildMemberAdd', async(member) => { // this event gets triggered when a new member joins the server!
+
+    const Channel = member.guild.channels.cache.get('788543692411109416') //insert channel id that you want to send to
+    
+    const embed = new MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('New Member')
+        .setDescription(`**${member.displayName}** welcome to ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
+    
+    Channel.send(embed)
+})
+
 
 
 client.on('message', message => {
