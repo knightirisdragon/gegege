@@ -21,14 +21,20 @@ client.on('ready',() => {
 
 
 client.on('guildMemberAdd', member => {
-    const exampleEmbed = new Discord.RichEmbed()
-        .setColor('#0099ff')
-        .setTitle('Welcome')
-        .addField('', member.nickname)
-        .setImage(member.user.avatarURL)
+  
+  const channel = member.guild.channels.find(ch => ch.name === 'join-leaves');
+  
+  if (!channel) return;
+  
+  let embed = new Discord.RichEmbed()
+  .setTitle("Welcome")
+  .setAuthor(`${member.user.tag} Has Joined.`, member.user.displayAvatarURL,)
+  .setThumbnail(member.user.displayAvatarURL)
+  .addField('Date Joined', member.user.createdAt, true)
+  .addField('Total Members', member.guild.memberCount, true)
 
-    member.guild.channels.get('788543692411109416').send(exampleEmbed);
-})
+    channel.send(embed);
+});
 
 
 
