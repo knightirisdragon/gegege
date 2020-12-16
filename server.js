@@ -12,7 +12,7 @@ const PREFIX = '!'
 
 
 client.on('ready',() => {    
-    let myGuild = client.guilds.get('689139264960856101');
+    let myGuild = client.guilds.cache.get('689139264960856101');
     let memberCount = myGuild.memberCount;
     client.user.setActivity(memberCount + ` אנשים בשרת `, {type: "WATCHING"})
     console.log(`${client.user.tag} is online`)
