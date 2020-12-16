@@ -19,17 +19,19 @@ client.on('ready',() => {
 })
 
 
-client.on('guildMemberAdd', async(member) => { // this event gets triggered when a new member joins the server!
 
-    const Channel = member.guild.channels.cache.get('788543692411109416') //insert channel id that you want to send to
-    
+client.on("guildMemberAdd", member => {
+  const channel = member.guild.channels.cache.find(
+    ch => ch.id === "788543692411109416"
+  );
+
     const embed = new MessageEmbed()
         .setColor('RANDOM')
         .setTitle('New Member')
         .setDescription(`**${member.displayName}** welcome to ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
     
-    Channel.send(embed)
-})
+    channel.send(Embed);
+});
 
 
 
