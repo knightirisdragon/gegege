@@ -46,3 +46,4 @@ client.on('guildMemberAdd', member => {
 
 
 client.login('Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.Xt5qGOSBiCb2iVGD00aBehSp-K4');//token
+גדג
