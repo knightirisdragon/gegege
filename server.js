@@ -3,6 +3,7 @@ const app = express();
 const {Client, RichEmbed } = require('discord.js')
 const Discord = require("discord.js");
 const client = new Client()
+const { MessageEmbed } = require("discord.js");
 const PREFIX = '!'
 
 
@@ -15,8 +16,18 @@ client.on('ready',() => {
 })
 
 
-
-
+client.on('guildMemberAdd', member => {
+  let bicon = member.user.displayAvatarURL;
+  let myGuild = client.guilds.cache.get('689139264960856101')
+  let membercount = myGuild.memberCount;
+  const channel = member.guild.channels.cache.find(ch => ch.id === '788543692411109416');
+    const embed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setThumbnail(bicon)
+      .setDescription(`ברוכים הבאים לשרת ${member}, אתה משתמש מספר, ${membercount} `);
+    channel.send(embed);
+  }
+)
 
 client.on('message', message => {
   let args = message.content.substring(PREFIX.length).split(" ");
@@ -35,7 +46,7 @@ message.delete()
 
 client.on('guildMemberAdd', member => {
         let bicon = member.user.displayAvatarURL;
-        const channel = member.guild.channels.find(ch => ch.id === '689139264960856101');
+        const channel = member.guild.channels.cache.find(ch => ch.id === '689139264960856101');
           const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(bicon)
@@ -46,4 +57,3 @@ client.on('guildMemberAdd', member => {
 
 
 client.login('Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.Xt5qGOSBiCb2iVGD00aBehSp-K4');//token
-גדג
