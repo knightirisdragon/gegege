@@ -13,7 +13,6 @@ client.on("ready", () => {
   console.log(`${client.user.tag} is online`);
 });
 
-
 client.on("guildMemberAdd", member => {
   let bicon = member.user.displayAvatarURL;
   let myGuild = client.guilds.cache.get("689139264960856101");
@@ -23,14 +22,13 @@ client.on("guildMemberAdd", member => {
   );
   const embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
+    .setTimestamp()
     .setThumbnail(member.user.avatarURL())
     .setDescription(
       `ברוכים הבאים לשרת ${member}, אתה משתמש מספר, ${membercount} `
     );
   channel.send(embed);
 });
-
-
 
 client.on("message", message => {
   let args = message.content.substring(PREFIX.length).split(" ");
@@ -46,17 +44,30 @@ client.on("message", message => {
   }
 });
 
+client.on("guildMemberAdd", member => {
+  let bicon = member.user.displayAvatarURL;
+  const channel = member.guild.channels.cache.find(
+    ch => ch.id === "689139264960856101"
+  );
+  const embed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setThumbnail(bicon)
+    .setDescription(`**Welcome to GOV-RP | Auditions**`);
+  member.send(embed);
+});
 
-
-client.on('guildMemberAdd', member => {
-        let bicon = member.user.displayAvatarURL;
-        const channel = member.guild.channels.find(ch => ch.id === '689139264960856101');
-          const embed = new Discord.RichEmbed()
-            .setColor("RANDOM")
-            .setThumbnail(bicon)
-            .setDescription(`**Welcome to GOV-RP | Auditions**`);
-          member.send(embed);
-        }
-      )
+client.on("message", message => {
+  const args = message.content.split(" ").slice(1);
+  if (message.content.startsWith(".say")) {
+    message.delete();
+    var saytext = args.join(" ");
+    let embed = new Discord.MessageEmbed()
+      .setDescription("**" + saytext + "**")
+      .setColor("BLUE");
+    message.channel.send("@everyone");
+    message.channel.send(embed);
+  }
+});
 
 client.login("Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.Xt5qGOSBiCb2iVGD00aBehSp-K4"); //token
