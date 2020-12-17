@@ -1,51 +1,14 @@
-// server.js
-// where your node app starts
-
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
-
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
-
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
-
-// https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
-});
-
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
-});
-
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
-});
-
-
 const {Client, RichEmbed } = require('discord.js')
-
 const Discord = require("discord.js");
- 
 const client = new Client()
- 
 const PREFIX = '!'
 
 
 
 client.on('ready',() => {    
-    let myGuild = client.guilds.get('689139264960856101');
+    let myGuild = client.guilds.cache.get('689139264960856101');
     let memberCount = myGuild.memberCount;
     client.user.setActivity(memberCount + ` אנשים בשרת `, {type: "WATCHING"})
     console.log(`${client.user.tag} is online`)
@@ -54,9 +17,9 @@ client.on('ready',() => {
 
 client.on('guildMemberAdd', member => {
   let bicon = member.user.displayAvatarURL;
-  let myGuild = client.guilds.get('689139264960856101')
+  let myGuild = client.guilds.cache.get('689139264960856101')
   let membercount = myGuild.memberCount;
-  const channel = member.guild.channels.find(ch => ch.id === '788543692411109416');
+  const channel = member.guild.channels.cache.find(ch => ch.id === '788543692411109416');
     const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setThumbnail(bicon)
@@ -64,6 +27,25 @@ client.on('guildMemberAdd', member => {
     channel.send(embed);
   }
 )
+
+
+bot.on("guildMemberAdd", member => {
+  const channel = member.guild.channels.cache.find(
+    ch => ch.id === "755494710113599498"
+  );
+  if (!channel) return;
+  console.log(channel);
+  let joinEmbed = new Discord.MessageEmbed()
+    .setTitle("**Member Joined**")
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(`Dev: DryZex`)
+    .setThumbnail(member.user.avatarURL())
+    .setDescription(
+      `**${member}** ברוך הבא לשרת שלנו!\nמקווים שתהנה.\nעכשיו אנחנו **${member.guild.memberCount}** משתמשים בשרת`
+    );
+  channel.send(joinEmbed);
+});
 
 
 client.on('message', message => {
