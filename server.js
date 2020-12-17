@@ -20,17 +20,17 @@ client.on('ready',() => {
 
 
 
-client.on('guildMemberAdd', member => {
-  
-  const channel = member.guild.channels.cache.find(ch => ch.name === '『👋🏻』ברוכים-הבאים');
-  
-  if (!channel) return;
-  
-  let embed = new Discord.RichEmbed()
-  .setTitle("Welcome")
-  .setAuthor(`${member.user.tag} Has Joined.`, member.user.displayAvatarURL,)
-  .
-    channel.send(embed);
+client.on("guildMemberAdd", member => {
+  const channel = member.guild.channels.cache.find(
+    ch => ch.id === "788543692411109416"
+  );
+
+    const embed = new MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('New Member')
+        .setDescription(`**${member.displayName}** welcome to ${member.guild.name}, we now have ${member.guild.memberCount} members!`)
+    
+    channel.send(Embed);
 });
 
 
