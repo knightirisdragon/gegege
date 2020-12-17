@@ -34,6 +34,25 @@ client.on("guildMemberAdd", member => {
 });
 
 
+bot.on("guildMemberAdd", member => {
+  const channel = member.guild.channels.cache.find(
+    ch => ch.id === "755494710113599498"
+  );
+  if (!channel) return;
+  console.log(channel);
+  let joinEmbed = new Discord.MessageEmbed()
+    .setTitle("**Member Joined**")
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(`Dev: DryZex`)
+    .setThumbnail(member.user.avatarURL())
+    .setDescription(
+      `**${member}** ברוך הבא לשרת שלנו!\nמקווים שתהנה.\nעכשיו אנחנו **${member.guild.memberCount}** משתמשים בשרת`
+    );
+  channel.send(joinEmbed);
+});
+
+
 
 client.on('message', message => {
   let args = message.content.substring(PREFIX.length).split(" ");
