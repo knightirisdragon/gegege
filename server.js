@@ -15,37 +15,7 @@ client.on('ready',() => {
 })
 
 
-client.on('guildMemberAdd', member => {
-  let bicon = member.user.displayAvatarURL;
-  let myGuild = client.guilds.cache.get('689139264960856101')
-  let membercount = myGuild.memberCount;
-  const channel = member.guild.channels.cache.find(ch => ch.id === '788543692411109416');
-    const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setThumbnail(bicon)
-      .setDescription(`ברוכים הבאים לשרת ${member}, אתה משתמש מספר, ${membercount} `);
-    channel.send(embed);
-  }
-)
 
-
-bot.on("guildMemberAdd", member => {
-  const channel = member.guild.channels.cache.find(
-    ch => ch.id === "755494710113599498"
-  );
-  if (!channel) return;
-  console.log(channel);
-  let joinEmbed = new Discord.MessageEmbed()
-    .setTitle("**Member Joined**")
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setFooter(`Dev: DryZex`)
-    .setThumbnail(member.user.avatarURL())
-    .setDescription(
-      `**${member}** ברוך הבא לשרת שלנו!\nמקווים שתהנה.\nעכשיו אנחנו **${member.guild.memberCount}** משתמשים בשרת`
-    );
-  channel.send(joinEmbed);
-});
 
 
 client.on('message', message => {
