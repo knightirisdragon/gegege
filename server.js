@@ -92,21 +92,4 @@ client.on("message", async message => {
     }})
 
 
-client.on("message", async message => {
-    let args = message.content.substring(PREFIX.length).split(" ");
-    let myguild = client.guilds.cache.get('755039566271873074')
-    let channel = myguild.channels.cache.get('730083922909855774')
-  
-    const command = args.shift().toLowerCase();
-    if(command === "su") {
-      const sayMessage = args.join(" ");
-      let embed = new Discord.MessageEmbed()
-      .setColor("#FCFCFC")
-      .setDescription(`${sayMessage}`)
-      message.delete().catch(O_o=>{}); 
-      channel.send(embed).then(messageReaction => {
-
-      })
-    }})
-
 client.login("Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.wzXA6BMMiWVXeZakJWaH-z55MKE"); //token
