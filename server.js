@@ -72,17 +72,16 @@ client.on("message", message => {
 
 client.on("message", async message => {
     let args = message.content.substring(PREFIX.length).split(" ");
-    let myguild = client.guilds.cache.get('755039566271873074')
-    let channel = myguild.channels.cache.get('789292579752902656')
+    let myguild = client.guilds.cache.get('730070360124555277')
+    let channel = myguild.channels.cache.get('789258184078393345')
   
     const command = args.shift().toLowerCase();
-    if(command === "su") {
+    if(command === "hm") {
       const sayMessage = args.join(" ");
       let embed = new Discord.MessageEmbed()
-      .setFooter('Dev By RoTeX_YT#5489')
       .setColor("#FCFCFC")
-      .setAuthor(message.author.tag + " הצעה זאת נפתחה על ידי")
-      .setTitle('הצעות לשרת')
+      .setAuthor(message.author.tag + " המלצה זאת נפתחה על ידי")
+      .setTitle('מערכת המלצות על שחקנים')
       .setDescription(`${sayMessage}`)
       message.delete().catch(O_o=>{}); 
       channel.send(embed).then(messageReaction => {
