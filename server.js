@@ -64,6 +64,7 @@ client.on("message", message => {
     var saytext = args.join(" ");
     let embed = new Discord.MessageEmbed()
       .setDescription("**" + saytext + "**")
+      .setTimestamp()
       .setColor("BLUE");
     message.channel.send("@everyone");
     message.channel.send(embed);
