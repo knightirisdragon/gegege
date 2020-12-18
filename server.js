@@ -92,4 +92,4 @@ client.on("message", async message => {
     }})
 
 
-client.login("Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.Xt5qGOSBiCb2iVGD00aBehSp-K4"); //token
+client.login("Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.wzXA6BMMiWVXeZakJWaH-z55MKE"); //token
