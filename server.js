@@ -71,20 +71,4 @@ client.on("message", message => {
 });
 
 
-client.on('message', message => {
-    let args = message.content.substring(PREFIX.length).split(" ");
-    switch(args[0]){
-        case 'ip':
-    let embed = new Discord.MessageEmbed()
-    .setTitle('**האייפי**')
-    .addField('IP',` fivem.gamecenter1.com:30120`)
-    .addField('TS',` GOVpublic`)
-    .setColor("RANDOM")
-  message.channel.send(embed);
-  message.delete()
-  }}
-  );
-
-
-
 client.login("Nzg4NTUxNTg0NDE3NDQ3OTY3.X9lJ5A.Xt5qGOSBiCb2iVGD00aBehSp-K4"); //token
