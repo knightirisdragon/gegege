@@ -213,10 +213,10 @@ bot.on("message", message => {
                     timestamp: new Date(),
                     footer: {
                         icon_url:
-                            "https://i.imgur.com/Bl8zjHy.png",
+                            "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
                         text: "DryZex Generator"
                     },
-                    image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                    image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
                         name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
@@ -242,10 +242,12 @@ bot.on("message", message => {
                     description: "Service created successfully `" + args[0] + "`!",
                     color: 0xff033d,
                     timestamp: new Date(),
-                    footer: {https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                    footer: {
+                        icon_url:
+                            "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
                         text: "DryZex Generator"
                     },
-                    image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                    image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
                         name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
