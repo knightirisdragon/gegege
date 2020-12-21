@@ -16,26 +16,11 @@ const chalk = require('chalk');
 
   bot.on('ready', msg => {
   console.log("");                                   
-  console.log((chalk.cyan(`                                            #####                                      #####                `)));
-  console.log((chalk.cyan(`                                           #     #   ##   #        ##    ####  #    # #     # ###### #    # `)));
-  console.log((chalk.cyan(`                                           #        #  #  #       #  #  #    # #   #  #       #      ##   # `)));
-  console.log((chalk.cyan(`                                           #  #### #    # #      #    # #      ####   #  #### #####  # #  # `)));
-  console.log((chalk.cyan(`                                           #     # ###### #      ###### #      #  #   #     # #      #  # # `)));
-  console.log((chalk.cyan(`                                           #     # #    # #      #    # #    # #   #  #     # #      #   ## `)));
-  console.log((chalk.cyan(`                                            #####  #    # ###### #    #  ####  #    #  #####  ###### #    # `)));
-  console.log("");                                  
-  console.log((chalk.yellow(`                                                               Crée par GalackQSM#7926 !`)));  
-  console.log((chalk.yellow(`                                                                © 2020 GalackQSM, Inc.`))); 
-  console.log("");                                   
-  console.log((chalk.red(`                                                         Discord: https://discord.gg/XH7zQ8s`)));   
-  console.log((chalk.red(`                                                       Twitter: https://twitter.com/Galack_QSM`)));   
-  console.log((chalk.red(`                                                        Github: https://github.com/GalackQSM`)));   
-  console.log((chalk.red(`                                                        Youtube: https://youtube.com/GalackQSM`)));   
-  console.log("");                                  
+                                
 
-  console.log(`Statistiques globales : \n\nLe bot a un total de ${bot.guilds.cache.size} serveurs. \nPour un total de ${bot.users.cache.size} membres.`)
-  console.log("Connecté en tant que " + bot.user.id + " | Prefix : " + prefix1 + " | Nombre de Serveurs "+ bot.guilds.cache.size +" | Nombres de salons "+ bot.channels.cache.size +" | Utilisateur totaux "+ bot.users.cache.size +" | Nombre d'emojis totaux "+ bot.emojis.cache.size +'');
-  bot.user.setActivity("+help - GalackGen");
+  console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
+  console.log("DryZex Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | Number of lounges "+ bot.channels.cache.size +" | User totals "+ bot.users.cache.size +" | Nombre d'emojis totaux "+ bot.emojis.cache.size +'');
+  bot.user.setActivity("!help - DryZex Generator");
 });
 
 bot.on("message", message => {
