@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./config.json");
 const prefix = config.prefix;
-const botname = "GalackGen";
+const botname = "DryZex Generator";
 const prefix1 = "!";
 var fs = require("fs");
 var lineReader = require("line-reader");
@@ -55,7 +55,7 @@ bot.on("message", message => {
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
                         text: "DryZex Generator"
                     },
-                    image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
+                    image: {url:"https://images.app.goo.gl/G8LCDcWGqpFguHgi9"},
                     author: {
                         name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
@@ -75,21 +75,20 @@ bot.on("message", message => {
                             data = data.substr(position + 1);
                             fs.writeFile(filePath, data, function (err) {
                                 const embed = {
-                                    title: "Compte " + args[0] + " généré!",
-                                    description: "Le compte de votre service demandé a été envoyé en tant que DM!",
+                                    title: "Account " + args[0] + " !gen",
+                                    description: "The account for your requested service has been sent as DM!",
                                     color: 0xff033d,
                                     timestamp: new Date(),
                                     footer: {
-                                        icon_url: "https://i.imgur.com/Bl8zjHy.png",
-                                        text: "Développé par GalackQSM#7926"
+                                        icon_url: "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                                        text: "DryZex Generator"
                                     },
                                     image: {
                                         url:
-                                            "https://i.imgur.com/X1QIYyS.gif"
+                                            "https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"
                                     },
                                     author: {
-                                        name: botname + " - générateur de compte",
-                        
+                                        name: botname + " - account generator",
                                         icon_url: bot.displayAvatarURL
                                     },
                                     fields: []
@@ -104,23 +103,22 @@ bot.on("message", message => {
                                 }
                             });
                         } else {
-                            message.channel.send("En rupture de stock!");
+                            message.channel.send("Out of stock!");
                         }
                     } else {
                         const embed = {
-                            title: "Service non trouvé!",
-                            description: "Le service demandé est introuvable!",
+                            title: "Service not found!",
+                            description: "The requested service cannot be found!",
                             color: 0xff033d,
                             timestamp: new Date(),
                             footer: {
                                 icon_url:
-                                    "https://i.imgur.com/Bl8zjHy.png",
-                                text: "Développé par GalackQSM#7926"
+                                    "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                                text: "DryZexGenerator"
                             },
-                            image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                            image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                             author: {
-                                     name: botname + " - générateur de compte",
-                                     url: "https://discord.gg/XH7zQ8s",
+                                     name: botname + " - account generator",
                                 icon_url: bot.displayAvatarURL
                             },
                             fields: []
