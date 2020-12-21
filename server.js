@@ -132,19 +132,18 @@ bot.on("message", message => {
         else
             if (command === "stats") {
                 const embed = {
-                    title: "Stats de " + botname,
-                    description: "Nombre total d'utilisateurs: `" + bot.users.cache.size + " membres`\nNombre total de salon: `" + bot.channels.cache.size+ " salons`\nNombre total d'émoji: `" + bot.emojis.cache.size+ " émojis`\nNombre total de serveur: `" + bot.guilds.cache.size+ " serveur(s)`",
+                    title: "Stats " + botname,
+                    description: "Total number of users : `" + bot.users.cache.size + " membres`\nTotal number of servers : `" + bot.guilds.cache.size+ " server(s)`",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
                         icon_url:
-                            "https://i.imgur.com/Bl8zjHy.png",
-                        text: "Développé par GalackQSM#7926"
+                            "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                        text: "DryZex Generator"
                     },
-                    image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                    image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                     author: {
-                         name: botname + " - générateur de compte",
-                         url: "https://discord.gg/XH7zQ8s",
+                         name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
@@ -156,13 +155,12 @@ bot.on("message", message => {
 
                 const embed = {
                     color: 0xff033d,
-                    title: botname + ' - générateur de compte',
-                    url: 'https://discord.gg/XH7zQ8s',
+                    title: botname + ' - account generator',
                     author: {
                         name: 'Liste des commandes',
                         url: 'https://discord.gg/XH7zQ8s',
                     },
-                    image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                    image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
 
                     description: '**Ceci est une liste de toutes les commandes**',
                     fields: [
