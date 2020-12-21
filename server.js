@@ -16,7 +16,7 @@ const chalk = require('chalk');
 
   bot.on('ready', msg => {
   console.log("");                                   
-                                
+           
 
   console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
   console.log("DryZex Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
@@ -295,3 +295,4 @@ bot.on("message", message => {
 });
 
 bot.login(config.token);
+Aa
