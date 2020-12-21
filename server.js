@@ -43,7 +43,7 @@ bot.on("message", message => {
                 if (!args[0])
                     return message.reply("Please provide a service!");
                 var fs = require("fs");
-                const filePath = __dirname + "/comptes/" + args[0] + ".txt";
+                const filePath = __dirname + "/accounts/" + args[0] + ".txt";
 
                 const embed = {
                     title: "Out of stock!",
@@ -235,7 +235,7 @@ bot.on("message", message => {
             let messageArray = message.content.split(" ");
             let args = messageArray.slice(1);
             const filePath = __dirname + "/accounts/" + args[0] + ".txt";
-            fs.writeFile(filePath, 'GalackQSM:GalackQSM', function (err) {
+            fs.writeFile(filePath, 'email:password', function (err) {
                 if (err) throw err;
                 const embed = {
                     title: "Service created!",
