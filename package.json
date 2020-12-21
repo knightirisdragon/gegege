@@ -12,7 +12,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "discord.js": "^12.5.0",
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "line-reader": "^0.4.0",
+    "async": "^3.2.0",
+    "firstline": "^2.0.2"
   },
   "engines": {
     "node": "12.x"
