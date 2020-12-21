@@ -259,19 +259,18 @@ bot.on("message", message => {
         }
         if (command === "restock") {
             const embed = {
-                title: "Merci de mettre un service!",
-                description: "Veuillez fournir le nom du service réapprovisionné!",
+                title: "Thank you for putting a service!",
+                description: "Please provide the name of the replenished service!",
                 color: 0xff033d,
                 timestamp: new Date(),
                 footer: {
                     icon_url:
-                        "https://i.imgur.com/Bl8zjHy.png",
-                    text: "Développé par GalackQSM#7926"
+                        "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                    text: "DryZex Generator"
                 },
-                 image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                 image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                 author: {
                     name: botname + " - account generator ",
-                    url: "https://discord.gg/XH7zQ8s",
                     icon_url: bot.displayAvatarURL
                 },
                 fields: []
@@ -279,7 +278,7 @@ bot.on("message", message => {
             let messageArray = message.content.split(" ");
             let args = messageArray.slice(1);
             if (!message.member.hasPermission("ADMINISTRATOR"))
-                return message.reply("Vous n'avez pas les autorisations pour faire cela!");
+                return message.reply("You don't have the permissions to do this!");
             if (!args[0])
             {
                 return message.channel.send({ embed });
@@ -289,7 +288,7 @@ bot.on("message", message => {
                 return message.channel.send({ embed });
             }
             else {
-            message.channel.send("@everyone\n● Restock de compte: **" + args[0] + "**\n● Nombre de compte restock: **" + args[1] + " compte(s)**\n● Restock par: " + "<@" + message.author.id +">");
+            message.channel.send("@everyone\n● Account restock: **" + args[0] + "**\n● Number of restock accounts: **" + args[1] + " account(s)**\n● Restock by: " + "<@" + message.author.id +">");
             }
         }
     }
