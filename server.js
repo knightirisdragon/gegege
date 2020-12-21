@@ -202,24 +202,23 @@ bot.on("message", message => {
             var account = args[0]
             var service = args[1]
             if(!account) return message.reply("Provide a formatted account string first!")
-            if(!service) return message.reply("Fournir d'abord un service!")
-            const filePath = __dirname + "/comptes/" + args[1] + ".txt";
+            if(!service) return message.reply("Provide service first!")
+            const filePath = __dirname + "/accounts/" + args[1] + ".txt";
             fs.appendFile(filePath, os.EOL + args[0], function (err) {
                 if (err) return console.log(err);
                 const embed = {
-                    title: "Compte ajouté!",
-                    description: "Compte ajouté avec succès à `" + service + "`!",
+                    title: "Account added!",
+                    description: "Account successfully added to `" + service + "`!",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
                         icon_url:
                             "https://i.imgur.com/Bl8zjHy.png",
-                        text: "Développé par GalackQSM#7926"
+                        text: "DryZex Generator"
                     },
                     image: {url:"https://i.imgur.com/XuVrWQh.png"},
                     author: {
-                        name: botname + " - générateur de compte",
-                        url: "https://discord.gg/XH7zQ8s",
+                        name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
