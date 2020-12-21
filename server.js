@@ -157,38 +157,37 @@ bot.on("message", message => {
                     color: 0xff033d,
                     title: botname + ' - account generator',
                     author: {
-                        name: 'Liste des commandes',
-                        url: 'https://discord.gg/XH7zQ8s',
+                        name: 'List of commands',
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
 
-                    description: '**Ceci est une liste de toutes les commandes**',
+                    description: '**This is a list of all commands**',
                     fields: [
                         {
-                            name: 'Générer des comptes',
-                            value: "Exemple: `" + prefix1 +"gen <Nom du service>`",
+                            name: 'Generate accounts',
+                            value: "Exemple: `" + prefix1 +"gen <Service name>`",
                         },
                         {
-                            name: 'Créer un service',
-                            value: "Exemple: `" + prefix1 +"create <Nom du service>`",
+                            name: 'Create a service',
+                            value: "Exemple: `" + prefix1 +"create <Service name>`",
                         },
                         {
-                            name: 'Notifier les restocks de compte',
-                            value: "Exemple: `" + prefix1 +"restock <Nom du service> <Nombre de compte>`",
+                            name: 'Notify account restocks',
+                            value: "Exemple: `" + prefix1 +"restock <Service name> <Number of accounts>`",
                         },
                         {
-                            name: 'Ajouter des comptes',
-                            value: "Exemple: `" + prefix1 +"add <mail:pass> <Nom du service>`",
+                            name: 'Add accounts',
+                            value: "Exemple: `" + prefix1 +"add <mail:pass> <Service name>`",
                         },
                         {
-                            name: 'Afficher les statistiques du bot ' + botname,
+                            name: 'View bot stats ' + botname,
                             value: "Exemple: `" + prefix1 +"stats`",
                         },
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'Développé par GalackQSM#7926',
-                        icon_url: 'https://i.imgur.com/Bl8zjHy.png',
+                        text: 'DryZex Generator',
+                        icon_url: 'https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png',
                     },
                 };
                 message.channel.send({ embed });
@@ -196,13 +195,13 @@ bot.on("message", message => {
 
         if (command === "add") {
             if (!message.member.hasPermission("ADMINISTRATOR"))
-                return message.reply("Vous n'avez pas les autorisations pour faire cela!");
+                return message.reply("You not have the permissions to do this!");
             var fs = require("fs");
             let messageArray = message.content.split(" ");
             let args = messageArray.slice(1);
             var account = args[0]
             var service = args[1]
-            if(!account) return message.reply("Fournissez d'abord une chaîne de compte formatée!")
+            if(!account) return message.reply("Provide a formatted account string first!")
             if(!service) return message.reply("Fournir d'abord un service!")
             const filePath = __dirname + "/comptes/" + args[1] + ".txt";
             fs.appendFile(filePath, os.EOL + args[0], function (err) {
