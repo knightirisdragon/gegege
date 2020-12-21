@@ -19,7 +19,7 @@ const chalk = require('chalk');
                                 
 
   console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
-  console.log("DryZex Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | Number of lounges "+ bot.channels.cache.size +" | User totals "+ bot.users.cache.size +" | Nombre d'emojis totaux "+ bot.emojis.cache.size +'');
+  console.log("DryZex Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
   bot.user.setActivity("!help - DryZex Generator");
 });
 
@@ -34,31 +34,30 @@ bot.on("message", message => {
         if (command === "gen") {
             if (generated.has(message.author.id)) {
                 message.channel.send(
-                    "Vous avez un temps de récupération de 15 minutes! - " +
+                    "You have a 15 minute recovery time! - " +
                     message.author.tag
                 );
             } else {
                 let messageArray = message.content.split(" ");
                 let args = messageArray.slice(1);
                 if (!args[0])
-                    return message.reply("Veuillez fournir un service!");
+                    return message.reply("Please provide a service!");
                 var fs = require("fs");
                 const filePath = __dirname + "/comptes/" + args[0] + ".txt";
 
                 const embed = {
-                    title: "En rupture de stock!",
-                    description: "Le service que vous avez demandé est actuellement en rupture de stock!",
+                    title: "Out of stock!",
+                    description: "The service you requested is currently out of stock!",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
                         icon_url:
-                            "https://i.imgur.com/Bl8zjHy.png",
-                        text: "Développé par GalackQSM#7926"
+                            "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                        text: "DryZex Generator"
                     },
-                    image: {url:"https://i.imgur.com/XuVrWQh.png"},
+                    image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                     author: {
-                        name: botname + " - générateur de compte",
-                        url: "https://discord.gg/XH7zQ8s",
+                        name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
@@ -90,7 +89,7 @@ bot.on("message", message => {
                                     },
                                     author: {
                                         name: botname + " - générateur de compte",
-                                        url: "https://discord.gg/XH7zQ8s",
+                        
                                         icon_url: bot.displayAvatarURL
                                     },
                                     fields: []
