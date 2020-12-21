@@ -230,27 +230,24 @@ bot.on("message", message => {
         }
         if (command === "create") {
             if (!message.member.hasPermission("ADMINISTRATOR"))
-                return message.reply("Vous n'avez pas les autorisations pour faire cela!");
+                return message.reply("You don't have the permissions to do this!");
             var fs = require("fs");
             let messageArray = message.content.split(" ");
             let args = messageArray.slice(1);
-            const filePath = __dirname + "/comptes/" + args[0] + ".txt";
+            const filePath = __dirname + "/accounts/" + args[0] + ".txt";
             fs.writeFile(filePath, 'GalackQSM:GalackQSM', function (err) {
                 if (err) throw err;
                 const embed = {
-                    title: "Service créé!",
-                    description: "Service créé avec succès `" + args[0] + "`!",
+                    title: "Service created!",
+                    description: "Service created successfully `" + args[0] + "`!",
                     color: 0xff033d,
                     timestamp: new Date(),
-                    footer: {
-                        icon_url:
-                            "https://i.imgur.com/Bl8zjHy.png",
-                        text: "Développé par GalackQSM#7926"
+                    footer: {https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
+                        text: "DryZex Generator"
                     },
                     image: {url:"https://i.imgur.com/XuVrWQh.png"},
                     author: {
-                        name: botname + " - générateur de compte",
-                        url: "https://discord.gg/XH7zQ8s",
+                        name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
@@ -271,7 +268,7 @@ bot.on("message", message => {
                 },
                  image: {url:"https://i.imgur.com/XuVrWQh.png"},
                 author: {
-                    name: botname + " - générateur de compte ",
+                    name: botname + " - account generator ",
                     url: "https://discord.gg/XH7zQ8s",
                     icon_url: bot.displayAvatarURL
                 },
