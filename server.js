@@ -14,6 +14,14 @@ var express = require('express');
 var app = express();
 const chalk = require('chalk');
 
+const listener = app.listen(process.env.PORT, function() {
+  console.log("Your app is listening on port " + listener.address().port);
+});
+const http = require("http");
+setInterval(() => {
+  http.get(`https://account-generator2.glitch.me/`);
+}, 224000);
+
   bot.on('ready', msg => {
   console.log("");                                   
            
