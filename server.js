@@ -141,7 +141,7 @@ bot.on("message", message => {
             if (command === "stats") {
                 const embed = {
                     title: "Stats " + botname,
-                    description: "Total number of users : `" + bot.users.cache.size + " membres`\nTotal number of servers : `" + bot.guilds.cache.size+ " server(s)`",
+                    description: "Total number of users : `" + bot.users.cache.size + " member(s)`\nTotal number of servers : `" + bot.guilds.cache.size+ " server(s)`",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
@@ -253,7 +253,7 @@ bot.on("message", message => {
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "Generator"
+                        text: "Generator - MADE BY J0N7TH7N#0894"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
@@ -274,7 +274,7 @@ bot.on("message", message => {
                 footer: {
                     icon_url:
                         "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                    text: "Generator"
+                    text: "Generator - MADE BY J0N7TH7N#0894"
                 },
                  image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                 author: {
