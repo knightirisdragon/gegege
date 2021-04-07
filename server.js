@@ -20,7 +20,7 @@ const listener = app.listen(process.env.PORT, function() {
 const http = require("http");
 setInterval(() => {
   http.get(`https://account-generator2.glitch.me/`);
-}, 224000);
+}, 22400);
 
   bot.on('ready', msg => {
   console.log("");                                   
