@@ -147,7 +147,7 @@ bot.on("message", message => {
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "DryZex Generator"
+                        text: "Generator - MADE BY J0N7TH7N#0894"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                     author: {
@@ -194,7 +194,7 @@ bot.on("message", message => {
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'DryZex Generator',
+                        text: 'Generator - MADE BY J0N7TH7N#0894',
                         icon_url: 'https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png',
                     },
                 };
@@ -222,7 +222,7 @@ bot.on("message", message => {
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "DryZex Generator"
+                        text: "Generator - MADE BY J0N7TH7N#0894"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
@@ -253,7 +253,7 @@ bot.on("message", message => {
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "DryZex Generator"
+                        text: "Generator"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
@@ -274,7 +274,7 @@ bot.on("message", message => {
                 footer: {
                     icon_url:
                         "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                    text: "DryZex Generator"
+                    text: "Generator"
                 },
                  image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                 author: {
