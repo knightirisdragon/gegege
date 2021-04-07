@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./config.json");
 const prefix = config.prefix;
-const botname = "DryZex Generator";
+const botname = "Generator";
 const prefix1 = "!";
 var fs = require("fs");
 var lineReader = require("line-reader");
@@ -27,8 +27,8 @@ setInterval(() => {
            
 
   console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
-  console.log("DryZex Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
-  bot.user.setActivity("!help - DryZex Generator");
+  console.log("Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
+  bot.user.setActivity("!help - J0N7TH7N#0894");
 });
 
 bot.on("message", message => {
@@ -61,7 +61,7 @@ bot.on("message", message => {
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "DryZex Generator"
+                        text: "Generator MADE BY J0N7TH7N#0894"
                     },
                     image: {url:"https://images.app.goo.gl/G8LCDcWGqpFguHgi9"},
                     author: {
@@ -89,7 +89,7 @@ bot.on("message", message => {
                                     timestamp: new Date(),
                                     footer: {
                                         icon_url: "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                                        text: "DryZex Generator"
+                                        text: "J0N7TH7N#0894"
                                     },
                                     image: {
                                         url:
@@ -122,7 +122,7 @@ bot.on("message", message => {
                             footer: {
                                 icon_url:
                                     "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                                text: "DryZexGenerator"
+                                text: "J0N7TH7N#0894"
                             },
                             image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                             author: {
