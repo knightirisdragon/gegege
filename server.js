@@ -28,7 +28,7 @@ setInterval(() => {
 
   console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
   console.log("Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
-  bot.user.setActivity("!help - J0N7TH7N#0894");
+  bot.user.setActivity("Made by J0N#0894");
 });
 
 bot.on("message", message => {
