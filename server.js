@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./config.json");
 const prefix = config.prefix;
-const botname = "Generator";
+const botname = "Invite for win";
 const prefix1 = "!";
 var fs = require("fs");
 var lineReader = require("line-reader");
@@ -28,7 +28,7 @@ setInterval(() => {
 
   console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
   console.log("Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
-  bot.user.setActivity("Made by J0N#0894");
+  bot.user.setActivity("Made by BIBIL#0001");
 });
 
 bot.on("message", message => {
@@ -60,10 +60,10 @@ bot.on("message", message => {
                     timestamp: new Date(),
                     footer: {
                         icon_url:
-                            "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "Generator MADE BY J0N7TH7N#0894"
+                            "https://cdn.discordapp.com/avatars/376400173238190080/a_0f1ed2962460781c4fe44c6a013d981f.gif?size=1024",
+                        text: "Bot made by BIBIL#0001"
                     },
-                    image: {url:"https://images.app.goo.gl/G8LCDcWGqpFguHgi9"},
+                    image: {url:"https://cdn.discordapp.com/avatars/376400173238190080/a_0f1ed2962460781c4fe44c6a013d981f.gif?size=1024"},
                     author: {
                         name: botname + " - account generator",
                         icon_url: bot.displayAvatarURL
