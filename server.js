@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./config.json");
 const prefix = config.prefix;
-const botname = "Invite for win";
-const prefix1 = "!";
+const botname = "DS - GENERATOR";
+const prefix1 = "--";
 var fs = require("fs");
 var lineReader = require("line-reader");
 var async = require("async");
@@ -17,7 +17,7 @@ const chalk = require('chalk');
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
-const http = require("http");
+const http = require("https");
 setInterval(() => {
   http.get(`https://account-generator2.glitch.me/`);
 }, 22400);
@@ -27,8 +27,8 @@ setInterval(() => {
            
 
   console.log(`Global stats : \n\nThe bot has a total of ${bot.guilds.cache.size} serveurs. \nFor a total of ${bot.users.cache.size} membres.`)
-  console.log("Generator " + bot.user.id + " | Prefix : " + prefix1 + " | Number of Servers "+ bot.guilds.cache.size +" | User totals "+ bot.users.cache.size +'');
-  bot.user.setActivity("Made by BIBIL#0001");
+  console.log("Generador " + bot.user.id + " | Prefijo : " + prefix1 + " | Numero de servers "+ bot.guilds.cache.size +" | Usuarios Totales "+ bot.users.cache.size +'');
+  bot.user.setActivity("Made by DenSiTyMoDzZ#0055");
 });
 
 bot.on("message", message => {
@@ -42,20 +42,20 @@ bot.on("message", message => {
         if (command === "gen") {
             if (generated.has(message.author.id)) {
                 message.channel.send(
-                    "You have a 15 minute recovery time! - " +
+                    "Tienes un tiempo de recuperación de 15 minutos! - " +
                     message.author.tag
                 );
             } else {
                 let messageArray = message.content.split(" ");
                 let args = messageArray.slice(1);
                 if (!args[0])
-                    return message.reply("Please provide a service!");
+                    return message.reply("Proporcione un tipo de cuenta!");
                 var fs = require("fs");
                 const filePath = __dirname + "/accounts/" + args[0] + ".txt";
 
                 const embed = {
-                    title: "Out of stock!",
-                    description: "The service you requested is currently out of stock!",
+                    title: "¡Agotado!",
+                    description: "El servicio que solicitaste está agotado actualmente!",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
@@ -65,7 +65,7 @@ bot.on("message", message => {
                     },
                     image: {url:"https://cdn.discordapp.com/avatars/376400173238190080/a_0f1ed2962460781c4fe44c6a013d981f.gif?size=1024"},
                     author: {
-                        name: botname + " - account generator",
+                        name: botname + " - PREMIUM BOT",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
@@ -83,8 +83,8 @@ bot.on("message", message => {
                             data = data.substr(position + 1);
                             fs.writeFile(filePath, data, function (err) {
                                 const embed = {
-                                    title: "Account " + args[0] + " !gen",
-                                    description: "The account for your requested service has been sent as DM!",
+                                    title: "Cuenta " + args[0] + " --gen",
+                                    description: "La cuenta del servicio solicitado se ha enviado como DM.!",
                                     color: 0xff033d,
                                     timestamp: new Date(),
                                     footer: {
@@ -96,7 +96,7 @@ bot.on("message", message => {
                                             "https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"
                                     },
                                     author: {
-                                        name: botname + " - account generator",
+                                        name: botname + " - PREMIUM BOT",
                                         icon_url: bot.displayAvatarURL
                                     },
                                     fields: []
@@ -111,12 +111,12 @@ bot.on("message", message => {
                                 }
                             });
                         } else {
-                            message.channel.send("Out of stock!");
+                            message.channel.send("¡Agotado!");
                         }
                     } else {
                         const embed = {
-                            title: "Service not found!",
-                            description: "The requested service cannot be found!",
+                            title: "Servicio no encontrado!",
+                            description: "No se puede encontrar el servicio solicitado!",
                             color: 0xff033d,
                             timestamp: new Date(),
                             footer: {
@@ -126,7 +126,7 @@ bot.on("message", message => {
                             },
                             image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                             author: {
-                                     name: botname + " - account generator",
+                                     name: botname + " - PREMIUM BOT",
                                 icon_url: bot.displayAvatarURL
                             },
                             fields: []
@@ -140,8 +140,8 @@ bot.on("message", message => {
         else
             if (command === "stats") {
                 const embed = {
-                    title: "Stats " + botname,
-                    description: "Total number of users : `" + bot.users.cache.size + " member(s)`\nTotal number of servers : `" + bot.guilds.cache.size+ " server(s)`",
+                    title: "Estadisticas " + botname,
+                    description: "NTotal: `" + bot.users.cache.size + " member(s)`\nTotal number of servers : `" + bot.guilds.cache.size+ " server(s)`",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
@@ -151,7 +151,7 @@ bot.on("message", message => {
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                     author: {
-                         name: botname + " - account generator",
+                         name: botname + " - PREMIUM BOT",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
