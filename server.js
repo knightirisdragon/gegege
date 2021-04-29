@@ -141,13 +141,13 @@ bot.on("message", message => {
             if (command === "stats") {
                 const embed = {
                     title: "Estadisticas " + botname,
-                    description: "NTotal: `" + bot.users.cache.size + " member(s)`\nTotal number of servers : `" + bot.guilds.cache.size+ " server(s)`",
+                    description: "Un total de : `" + bot.users.cache.size + " miembro(s)`\nUn total de : `" + bot.guilds.cache.size+ " server(s)`",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "Generator - MADE BY J0N7TH7N#0894"
+                        text: "Generator - MADE BY DenSiTyMoDzZ#0055"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                     author: {
@@ -163,38 +163,38 @@ bot.on("message", message => {
 
                 const embed = {
                     color: 0xff033d,
-                    title: botname + ' - account generator',
+                    title: botname + ' - PREMIUM BOT',
                     author: {
-                        name: 'List of commands',
+                        name: 'Lista de Comandos',
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
 
-                    description: '**This is a list of all commands**',
+                    description: '**Esta es una lista de todos los comandos**',
                     fields: [
                         {
-                            name: 'Generate accounts',
-                            value: "Exemple: `" + prefix1 +"gen <Service name>`",
+                            name: 'Generar cuentas',
+                            value: "Ejemplo: `" + prefix1 +"gen <Nombre Cuenta>`",
                         },
                         {
-                            name: 'Create a service',
-                            value: "Exemple: `" + prefix1 +"create <Service name>`",
+                            name: 'Crea un servicio',
+                            value: "Ejemplo: `" + prefix1 +"create <Nombre Cuenta>`",
                         },
                         {
-                            name: 'Notify account restocks',
-                            value: "Exemple: `" + prefix1 +"restock <Service name> <Number of accounts>`",
+                            name: 'Notificar reabastecimientos de cuentas',
+                            value: "Ejemplo: `" + prefix1 +"restock <Nombre Cuenta> <Número de Cuentas>`",
                         },
                         {
-                            name: 'Add accounts',
-                            value: "Exemple: `" + prefix1 +"add <mail:pass> <Service name>`",
+                            name: 'Añadir Cuentas',
+                            value: "Ejemplo: `" + prefix1 +"add <mail:pass> <Nombre Cuenta>`",
                         },
                         {
-                            name: 'View bot stats ' + botname,
-                            value: "Exemple: `" + prefix1 +"stats`",
+                            name: 'Ver estadísticas de bot ' + botname,
+                            value: "Ejemplo: `" + prefix1 +"stats`",
                         },
                     ],
                     timestamp: new Date(),
                     footer: {
-                        text: 'Generator - MADE BY J0N7TH7N#0894',
+                        text: 'Generator - MADE BY DenSiTyMoDzZ#0055',
                         icon_url: 'https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png',
                     },
                 };
@@ -203,30 +203,30 @@ bot.on("message", message => {
 
         if (command === "add") {
             if (!message.member.hasPermission("ADMINISTRATOR"))
-                return message.reply("You not have the permissions to do this!");
+                return message.reply("No tienes los permisos para hacer esto!");
             var fs = require("fs");
             let messageArray = message.content.split(" ");
             let args = messageArray.slice(1);
             var account = args[0]
             var service = args[1]
-            if(!account) return message.reply("Provide a formatted account string first!")
-            if(!service) return message.reply("Provide service first!")
+            if(!account) return message.reply("¡Primero proporcione una cadena de cuenta formateada!")
+            if(!service) return message.reply("Brindar servicio primero!")
             const filePath = __dirname + "/accounts/" + args[1] + ".txt";
             fs.appendFile(filePath, os.EOL + args[0], function (err) {
                 if (err) return console.log(err);
                 const embed = {
-                    title: "Account added!",
-                    description: "Account successfully added to `" + service + "`!",
+                    title: "Cuenta agregada!",
+                    description: "Cuenta agregada correctamente a `" + service + "`!",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "Generator - MADE BY J0N7TH7N#0894"
+                        text: "Generator - MADE BY DenSiTyMoDzZ#0055"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
-                        name: botname + " - account generator",
+                        name: botname + " - PREMIUM BOT",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
@@ -246,18 +246,18 @@ bot.on("message", message => {
             fs.writeFile(filePath, 'email:password', function (err) {
                 if (err) throw err;
                 const embed = {
-                    title: "Service created!",
-                    description: "Service created successfully `" + args[0] + "`!",
+                    title: "Servicio Creado",
+                    description: "Servicio creado con éxito `" + args[0] + "`!",
                     color: 0xff033d,
                     timestamp: new Date(),
                     footer: {
                         icon_url:
                             "https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png",
-                        text: "Generator - MADE BY J0N7TH7N#0894"
+                        text: "Generator - MADE BY DenSiTyMoDzZ#0055"
                     },
                     image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/790696237808353290/16085870538602755590204772825719.gif"},
                     author: {
-                        name: botname + " - account generator",
+                        name: botname + " - PREMIUM BOT",
                         icon_url: bot.displayAvatarURL
                     },
                     fields: []
@@ -267,8 +267,8 @@ bot.on("message", message => {
         }
         if (command === "restock") {
             const embed = {
-                title: "Thank you for putting a service!",
-                description: "Please provide the name of the replenished service!",
+                title: "Gracias por poner un servicio!",
+                description: "Proporcione el nombre del servicio reabastecido.",
                 color: 0xff033d,
                 timestamp: new Date(),
                 footer: {
@@ -278,7 +278,7 @@ bot.on("message", message => {
                 },
                  image: {url:"https://cdn.discordapp.com/attachments/755771975946862722/774016941948928010/Huskey_Logo.png"},
                 author: {
-                    name: botname + " - account generator ",
+                    name: botname + " - PREMIUM BOT ",
                     icon_url: bot.displayAvatarURL
                 },
                 fields: []
@@ -286,7 +286,7 @@ bot.on("message", message => {
             let messageArray = message.content.split(" ");
             let args = messageArray.slice(1);
             if (!message.member.hasPermission("ADMINISTRATOR"))
-                return message.reply("You don't have the permissions to do this!");
+                return message.reply("No tienes los permisos para hacer esto!");
             if (!args[0])
             {
                 return message.channel.send({ embed });
@@ -296,7 +296,7 @@ bot.on("message", message => {
                 return message.channel.send({ embed });
             }
             else {
-            message.channel.send("@everyone\n● Account restock: **" + args[0] + "**\n● Number of restock accounts: **" + args[1] + " account(s)**\n● Restock by: " + "<@" + message.author.id +">");
+            message.channel.send("@everyone\n● Reabastecimiento de cuenta: **" + args[0] + "**\n● Número de cuentas de reabastecimiento: **" + args[1] + " cuenta(s)**\n● Restablecido por: " + "<@" + message.author.id +">");
             }
         }
     }
